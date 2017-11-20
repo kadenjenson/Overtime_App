@@ -1,8 +1,18 @@
 @user = User.create(email: "test@test.com", 
-            password: "asdfasdf", 
-            password_confirmation: "asdfasdf", 
-            first_name: "SpongeBob", 
-            last_name: "Squarepants")
+                    password: "asdfasdf", 
+                    password_confirmation: "asdfasdf", 
+                    first_name: "SpongeBob", 
+                    last_name: "Squarepants")
+
+puts "1 user created"
+
+AdminUser.create(email: "admin@test.com", 
+                 password: "asdfasdf", 
+                 password_confirmation: "asdfasdf", 
+                 first_name: "SpongeBob", 
+                 last_name: "Adminpants")
+
+puts "1 admin created"
 
 100.times do |post|
   Post.create!(date: Date.today, rationale: "#{post} rationale content", user_id: @user.id)
